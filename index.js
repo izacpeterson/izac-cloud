@@ -19,6 +19,6 @@ app.get("/update", (req, res) => {
   res.send("Updated");
 });
 
-app.listen(8080, () => {
+app.listen(80, () => {
   console.log("Server up");
 });
