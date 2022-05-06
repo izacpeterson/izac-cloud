@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const { bash } = require("child_process");
+const { exec } = require("child_process");
 
 app.use(cors());
 
@@ -15,9 +15,10 @@ app.use(express.static("public"));
 app.use("/scripts", express.static("scripts"));
 
 app.get("/update", (req, res) => {
-  bash("./scripts/update.sh");
+  exec("./scripts/update.sh");
+  res.send("Updated");
 });
 
-app.listen(80, () => {
+app.listen(8080, () => {
   console.log("Server up");
 });
