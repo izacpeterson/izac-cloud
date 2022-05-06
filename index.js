@@ -13,6 +13,6 @@ app.use(express.static("public"));
 
 app.use("/scripts", express.static("scripts"));
 
-app.listen(8080, () => {
+app.listen(80, () => {
   console.log("Server up");
 });
