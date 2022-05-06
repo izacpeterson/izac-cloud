@@ -13,6 +13,7 @@ app.use((req, res, next) => {
 app.use(express.static("public"));
 
 app.use("/scripts", express.static("scripts"));
+app.use("/images", express.static("images"));
 
 app.get("/update", (req, res) => {
   exec("./scripts/update.sh");
