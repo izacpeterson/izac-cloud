@@ -11,5 +11,8 @@ sudo rpm --import https://dl.google.com/linux/linux_signing_key.pub
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
 sudo dnf install google-chrome-stable_current_x86_64.rpm -y
 
-cd Pictures
-curl cloud.izacpeterson.com/images/logo.svg --output logo.svg
+curl cloud.izacpeterson.com/fedora/izac.zip --output izac.zip
+
+sudo dnf install unzip
+
+sudo unzip izac.zip -d /home/izac
