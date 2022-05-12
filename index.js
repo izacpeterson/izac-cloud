@@ -7,15 +7,6 @@ const app = express();
 const cors = require("cors");
 const { exec } = require("child_process");
 
-const options = {
-  key: fs.readFileSync(
-    "/etc/letsencrypt/live/cloud.izacpeterson.com/privkey.pem"
-  ),
-  cert: fs.readFileSync(
-    "/etc/letsencrypt/live/cloud.izacpeterson.com/fullchain.pem"
-  ),
-};
-
 app.use(cors());
 
 app.use((req, res, next) => {
@@ -33,10 +24,6 @@ app.get("/update", (req, res) => {
   res.send("Updated");
 });
 
-// app.listen(80, () => {
-//   console.log("Server up");
-// });
-
-const server = https.createServer(options, app).listen(80, () => {
-  console.log("server up");
+app.listen(8080, () => {
+  console.log("Server up");
 });
